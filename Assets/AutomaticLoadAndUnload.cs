@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class TestLoadAndUnload : MonoBehaviour {
+public class AutomaticLoadAndUnload : MonoBehaviour {
 
     public SceneGroupLoaderComponent Loader;
 
