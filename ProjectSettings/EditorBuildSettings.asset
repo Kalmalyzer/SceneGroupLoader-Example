@@ -14,3 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SceneGroups/SceneGroup1/Scene1B.unity
     guid: 43a61bcdd7445924ba2094a4663391f9
+  - enabled: 1
+    path: Assets/SceneGroups/SceneGroup2/Scene2A.unity
+    guid: f81d3ced3af610d4481cac03abb663b8
+  - enabled: 1
+    path: Assets/SceneGroups/SceneGroup2/Scene2B.unity
+    guid: e993b2dc5155a4a45843553abdaf3f68
