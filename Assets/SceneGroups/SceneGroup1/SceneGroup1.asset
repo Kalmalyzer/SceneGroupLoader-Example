@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Name: SceneGroup1
   m_EditorClassIdentifier: 
   Scenes:
-  - Scene1A
-  - Scene1B
+  - sceneAsset: {fileID: 102900000, guid: aeceda54595f8e6408cd6cf35def5366, type: 3}
+    sceneName: SceneGroups/SceneGroup1/Scene1A
+  - sceneAsset: {fileID: 102900000, guid: 43a61bcdd7445924ba2094a4663391f9, type: 3}
+    sceneName: SceneGroups/SceneGroup1/Scene1B
