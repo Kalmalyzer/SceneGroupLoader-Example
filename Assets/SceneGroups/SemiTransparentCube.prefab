@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65363107919918072}
   - component: {fileID: 23742626521747272}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SemiTransparentCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -322,7 +322,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1222923477787464, guid: f424d1d5f20fb0d4e83fb882023b9770, type: 2}
       propertyPath: m_Name
-      value: Cube
+      value: SemiTransparentCube
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f424d1d5f20fb0d4e83fb882023b9770, type: 2}
