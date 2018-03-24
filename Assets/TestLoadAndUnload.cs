@@ -1,5 +1,4 @@
-﻿using System;
-using SceneGroupLoader;
+﻿using SceneGroupLoader;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -15,9 +14,8 @@ public class TestLoadAndUnload : MonoBehaviour {
         Assert.IsNotNull(SceneGroup1);
     }
 
-	// Use this for initialization
-	void Start () {
-
+	void Start()
+    {
         Loader.LoadSceneGroup(SceneGroup1, OnSceneGroup1Loaded);
 	}
 
@@ -34,5 +32,6 @@ public class TestLoadAndUnload : MonoBehaviour {
     private void OnSceneGroup1Unloaded(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
     {
         Debug.Log("Done");
+        Loader.LoadSceneGroup(SceneGroup1, OnSceneGroup1Loaded);
     }
 }
