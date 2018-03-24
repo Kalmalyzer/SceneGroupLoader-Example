@@ -12,6 +12,8 @@ public class InteractiveLoadAndUnload : MonoBehaviour {
     public Button UnloadSceneGroup1;
     public Button LoadSceneGroup2;
     public Button UnloadSceneGroup2;
+    public Button Switch1To2;
+    public Button Switch2To1;
 
     public SceneGroupLoader.SceneGroup SceneGroup1;
     public SceneGroupLoader.SceneGroup SceneGroup2;
@@ -27,9 +29,16 @@ public class InteractiveLoadAndUnload : MonoBehaviour {
         Assert.IsNotNull(UnloadSceneGroup1);
         Assert.IsNotNull(LoadSceneGroup2);
         Assert.IsNotNull(UnloadSceneGroup2);
+        Assert.IsNotNull(Switch1To2);
+        Assert.IsNotNull(Switch2To1);
 
         Assert.IsNotNull(SceneGroup1);
         Assert.IsNotNull(SceneGroup2);
+    }
+
+    void Start()
+    {
+        ReactivateButtons();
     }
 
     ///////////////////// SceneGroup1 related buttons ////////////////////
@@ -94,6 +103,54 @@ public class InteractiveLoadAndUnload : MonoBehaviour {
         ReactivateButtons();
     }
 
+    ///////////////////// Switch related buttons ////////////////////
+
+    public void OnSwitch1To2()
+    {
+        DeactivateButtons();
+        Loader.LoadSceneGroup(SceneGroup2, OnSwitchLoad2Done);
+    }
+
+    private void OnSwitchLoad2Done(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
+    {
+        loadedSceneGroup2 = sceneGroupHandle;
+        Loader.ActivateSceneGroup(sceneGroupHandle, OnSwitchActivate2Done);
+    }
+
+    private void OnSwitchActivate2Done(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
+    {
+        Loader.UnloadSceneGroup(loadedSceneGroup1, OnSwitchUnload1Done);
+    }
+
+    private void OnSwitchUnload1Done(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
+    {
+        loadedSceneGroup1 = null;
+        ReactivateButtons();
+    }
+
+    public void OnSwitch2To1()
+    {
+        DeactivateButtons();
+        Loader.LoadSceneGroup(SceneGroup1, OnSwitchLoad1Done);
+    }
+
+    private void OnSwitchLoad1Done(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
+    {
+        loadedSceneGroup1 = sceneGroupHandle;
+        Loader.ActivateSceneGroup(sceneGroupHandle, OnSwitchActivate1Done);
+    }
+
+    private void OnSwitchActivate1Done(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
+    {
+        Loader.UnloadSceneGroup(loadedSceneGroup2, OnSwitchUnload2Done);
+    }
+
+    private void OnSwitchUnload2Done(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
+    {
+        loadedSceneGroup2 = null;
+        ReactivateButtons();
+    }
+
     ///////////////////// Shared functionality ////////////////////
 
     private void DeactivateButtons()
@@ -102,6 +159,8 @@ public class InteractiveLoadAndUnload : MonoBehaviour {
         UnloadSceneGroup1.interactable = false;
         LoadSceneGroup2.interactable = false;
         UnloadSceneGroup2.interactable = false;
+        Switch1To2.interactable = false;
+        Switch2To1.interactable = false;
     }
 
     private void ReactivateButtons()
@@ -110,5 +169,7 @@ public class InteractiveLoadAndUnload : MonoBehaviour {
         UnloadSceneGroup1.interactable = (loadedSceneGroup1 != null);
         LoadSceneGroup2.interactable = (loadedSceneGroup2 == null);
         UnloadSceneGroup2.interactable = (loadedSceneGroup2 != null);
+        Switch1To2.interactable = (loadedSceneGroup1 != null && loadedSceneGroup2 == null);
+        Switch2To1.interactable = (loadedSceneGroup1 == null && loadedSceneGroup2 != null);
     }
 }
