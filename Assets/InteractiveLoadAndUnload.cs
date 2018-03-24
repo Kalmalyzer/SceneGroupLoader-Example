@@ -108,7 +108,7 @@ public class InteractiveLoadAndUnload : MonoBehaviour {
     public void OnSwitch1To2()
     {
         DeactivateButtons();
-        Loader.LoadSceneGroup(SceneGroup2, OnSwitchLoad2Done);
+        Loader.UnloadSceneGroup(loadedSceneGroup1, OnSwitchUnload1Done);
     }
 
     private void OnSwitchLoad2Done(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
@@ -119,13 +119,13 @@ public class InteractiveLoadAndUnload : MonoBehaviour {
 
     private void OnSwitchActivate2Done(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
     {
-        Loader.UnloadSceneGroup(loadedSceneGroup1, OnSwitchUnload1Done);
+        ReactivateButtons();
     }
 
     private void OnSwitchUnload1Done(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
     {
         loadedSceneGroup1 = null;
-        ReactivateButtons();
+        Loader.LoadSceneGroup(SceneGroup2, OnSwitchLoad2Done);
     }
 
     public void OnSwitch2To1()
