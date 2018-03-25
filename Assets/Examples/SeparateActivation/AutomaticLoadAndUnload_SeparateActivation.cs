@@ -4,7 +4,7 @@ using UnityEngine.Assertions;
 
 public class AutomaticLoadAndUnload_SeparateActivation : MonoBehaviour {
 
-    public SceneGroupLoaderWithSeparateActivationComponent Loader;
+    public SceneGroupLoader.SeparateActivation.SceneGroupLoaderComponent Loader;
 
     public SceneGroup SceneGroup1;
 

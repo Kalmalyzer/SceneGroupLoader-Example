@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class InteractiveLoadAndUnload_SeparateActivation : MonoBehaviour {
 
-    public SceneGroupLoader.SceneGroupLoaderWithSeparateActivationComponent Loader;
+    public SceneGroupLoader.SeparateActivation.SceneGroupLoaderComponent Loader;
 
     public Button LoadSceneGroup1;
     public Button UnloadSceneGroup1;
