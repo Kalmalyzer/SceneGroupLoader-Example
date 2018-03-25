@@ -2,9 +2,9 @@
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class AutomaticLoadAndUnload : MonoBehaviour {
+public class AutomaticLoadAndUnload_SeparateActivation : MonoBehaviour {
 
-    public SceneGroupLoaderComponent Loader;
+    public SceneGroupLoaderWithSeparateActivationComponent Loader;
 
     public SceneGroup SceneGroup1;
 
@@ -19,17 +19,17 @@ public class AutomaticLoadAndUnload : MonoBehaviour {
         Loader.LoadSceneGroup(SceneGroup1, OnSceneGroup1Loaded);
 	}
 
-    private void OnSceneGroup1Loaded(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
+    private void OnSceneGroup1Loaded(SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
     {
         Loader.ActivateSceneGroup(sceneGroupHandle, OnSceneGroup1Activated);
     }
 
-    private void OnSceneGroup1Activated(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
+    private void OnSceneGroup1Activated(SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
     {
         Loader.UnloadSceneGroup(sceneGroupHandle, OnSceneGroup1Unloaded);
     }
 
-    private void OnSceneGroup1Unloaded(SceneGroupLoader.SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
+    private void OnSceneGroup1Unloaded(SceneGroupLoader.SceneGroupHandle sceneGroupHandle)
     {
         Debug.Log("Done");
         Loader.LoadSceneGroup(SceneGroup1, OnSceneGroup1Loaded);

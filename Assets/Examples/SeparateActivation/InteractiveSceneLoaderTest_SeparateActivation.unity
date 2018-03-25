@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 502251183}
   - component: {fileID: 502251182}
   m_Layer: 0
-  m_Name: SceneGroupLoader
+  m_Name: SceneGroupLoaderWithSeparateActivation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -993,7 +993,7 @@ GameObject:
   - component: {fileID: 1429081511}
   - component: {fileID: 1429081510}
   m_Layer: 0
-  m_Name: InteractiveLoadAndUnload
+  m_Name: InteractiveLoadAndUnload_SeparateActivation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
