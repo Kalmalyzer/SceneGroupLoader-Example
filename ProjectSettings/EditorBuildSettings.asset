@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/InteractiveSceneLoaderTest.unity
+    path: Assets/Examples/SeparateActivation/InteractiveSceneLoaderTest_SeparateActivation.unity
     guid: 7bf39e8f3ad85cb499bc6ac66e4a4959
+  - enabled: 1
+    path: Assets/Examples/SeparateActivation/AutomaticSceneLoaderTest_SeparateActivation.unity
+    guid: 4a547947806073c4e9612a4ea6d33628
+  - enabled: 1
+    path: Assets/Examples/JointActivation/InteractiveSceneLoaderTest_JointActivation.unity
+    guid: ac91b4d5dc2e1ec4794b844bfda4eeb2
+  - enabled: 1
+    path: Assets/Examples/JointActivation/AutomaticSceneLoaderTest_JointActivation.unity
+    guid: 4d219ea11b07f1a4bb3fa58aa12f592c
   - enabled: 1
     path: Assets/SceneGroups/SceneGroup1/Scene1A.unity
     guid: aeceda54595f8e6408cd6cf35def5366
@@ -20,6 +29,3 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/SceneGroups/SceneGroup2/Scene2B.unity
     guid: e993b2dc5155a4a45843553abdaf3f68
-  - enabled: 1
-    path: Assets/AutomaticSceneLoaderTest.unity
-    guid: 4a547947806073c4e9612a4ea6d33628
