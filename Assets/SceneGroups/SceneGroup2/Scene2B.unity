@@ -341,7 +341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Scene 1B
+  m_Text: Scene 2B
 --- !u!222 &995109423
 CanvasRenderer:
   m_ObjectHideFlags: 0
